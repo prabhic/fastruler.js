@@ -10,6 +10,11 @@ If you need a full featured Ruler guide refer to https://github.com/mark-rolich/
 
 <img src="http://prabhic.github.io/fastruler.js/screenshots/demo.png" />
 
+TBD
+---
+- Currently it is recreating all the spans, whenever user scrolls. Need to reuse.
+- demo is not really infinite
+
 Copyright and License
 ---------------------
 
