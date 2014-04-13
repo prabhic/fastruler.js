@@ -1,13 +1,14 @@
 fastruler.js
 ============
 
-ruler for infinite drawing boards
+Ruler for infinite drawing boards
 
-(If you need a full featured Ruler guide refer to https://github.com/mark-rolich/RulersGuides.js)
+(used css and code snippets from RulersGuides.js.
+If you need a full featured Ruler guide refer to https://github.com/mark-rolich/RulersGuides.js)
 
-Demo:
+<a href="http://prabhic.github.io/fastruler.js" target="_blank"><strong>DEMO</strong></a>
 
-<img src="https://github.com/prabhic/fastruler.js/screenshots/demo.png" />
+<img src="http://prabhic.github.io/fastruler.js/screenshots/demo.png" />
 
 Copyright and License
 ---------------------
