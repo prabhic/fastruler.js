@@ -1,0 +1,140 @@
+html,body {
+    margin: 0;
+    padding: 0
+}
+
+.fr-wraper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.ruler {
+    background-color: #367F8D;
+    position: absolute;
+    top: 0;
+    left: 0;   
+}
+
+.ruler .label {
+    font: 12px Arial;
+    color: #c6c8c8
+}
+
+.ruler,.ruler span {
+    font-size: 0
+}
+
+.ruler.h {
+    left:20px;
+    height: 20px;
+    border-bottom: solid 1px 367F8D
+}
+
+.ruler.v {
+    top:20px;
+    width: 20px;
+    border-right: solid 1px 367F8D
+}
+
+.ruler.h span {
+    border-left: solid 1px #999;
+    height: 0px;
+    width: 1px;
+    vertical-align: bottom;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+.ruler.v span {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    border-top: solid 1px #999;
+    width: 0px;
+    height: 1px
+}
+
+.ruler.v span.major {
+    border-top: solid 1px #c6c8c8;
+    width: 6px;
+    height:9px;
+}
+
+.ruler.v span.milestone {
+    position: relative;
+    border-top: solid 1px #c6c8c8;
+    width: 15px;
+    height: 9px;
+    
+}
+
+.ruler.v span.label {
+    border: 0;
+    font-size: 9px;
+    position: absolute;
+    text-align: center;
+    width: 9px;
+    left:-5px;
+    -webkit-transform:rotate(-90deg)
+}
+
+.ruler.h span.major {
+    border-left: solid 1px #c6c8c8;
+    height: 6px;
+    width:9px;
+}
+
+.ruler.h span.milestone {
+    position: relative;
+    border-left: solid 1px #c6c8c8;
+    height: 15px;
+    width:9px;
+}
+
+.ruler.h span.label {
+    border: 0;
+    font-size: 9px;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    width: 9px;
+    left:0px;
+}
+
+.ruler.h .l10 {
+    left: -5px
+}
+
+.ruler.h .l100 {
+    left: -7px
+}
+
+.ruler.h .l1000 {
+    left: -10px
+}
+
+.ruler.v .l10,.ruler.v .l100,.ruler.v .l1000 {
+    top: -7px
+}
+
+.ruler.v .l10 {
+    left: -12px
+}
+
+.ruler.v .l100 {
+    left: -17px
+}
+
+.ruler.v .l1000 {
+    left: -23px
+}
+
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}

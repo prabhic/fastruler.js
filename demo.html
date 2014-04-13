@@ -1,0 +1,79 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="fastruler.css">
+<script type="application/javascript" src="dat.gui.js"></script>    
+<script type="application/javascript" src="fastruler.js"></script>  
+<style>
+#myframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:20px;
+    top:20px;
+    position: absolute;
+}   
+    
+</style>
+</head>
+<body>
+     <iframe id = 'myframe' >
+
+    </iframe> 
+    
+<script>
+    var ruler;
+    var iframeref;
+    var rc;
+
+    window.onscroll = function (event) {
+       scroll(0,0);
+    }
+    function iframescrolled(e) {
+        console.time('iframescrolledtimer');
+        
+        //console.log(iframeref.contentWindow.pageXOffset,' ',iframeref.contentWindow.pageYOffset);
+        ruler.setScrollOffsets((iframeref.contentWindow.pageXOffset-5000),(iframeref.contentWindow.pageYOffset-3000));
+        rc.pageXOffset = iframeref.contentWindow.pageXOffset;
+        rc.pageYOffset = iframeref.contentWindow.pageYOffset;
+        
+        console.timeEnd('iframescrolledtimer');
+    }
+    
+    window.onload = function() {
+        var pX = 0,
+            pY =0;
+        iframeref = document.getElementById('myframe');
+        ruler = new fastruler(window,document.body);
+        
+        function pageXOffsetChanged(value) {
+            pX = value;
+            ruler.setScrollOffsets(pX,pY);
+            // = value
+        }
+        function pageYOffsetChanged(value) {
+            pY = value;
+            ruler.setScrollOffsets(pX,pY);            
+            // = value
+        }
+        var rulercontrol = function() {
+            this.pageXOffset = 0;
+            this.pageYOffset = 0;
+        }
+
+        gui = new dat.GUI();
+        rc = new rulercontrol();
+
+        gui.add(rc, 'pageXOffset', 0, 10000).step(1).listen().onChange(pageXOffsetChanged);
+        gui.add(rc, 'pageYOffset', 0, 6000).step(1).listen().onChange(pageYOffsetChanged);
+        
+        iframeref.onload = function() {
+            iframeref.contentWindow.onscroll = iframescrolled;
+            iframeref.contentWindow.scroll(5000,3000);
+        }
+        iframeref.src = 'divs.html';
+    }
+    
+</script>
+    
+</body>
+</html>
